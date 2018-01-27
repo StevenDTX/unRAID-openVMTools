@@ -4,7 +4,7 @@
 <!ENTITY name      "unRAID-openVMTools">
 <!ENTITY author    "StevenDTX">
 <!ENTITY version   "2018.01.27.00">
-<!ENTITY pluginURL "https://raw.githubusercontent.com/StevenDTX/unRAID-openVMTools/master/openVMTools.plg">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/StevenDTX/unRAID-openVMTools/master/openVMTools-test.plg">
 ]>
 
 <PLUGIN  name="&name;"
