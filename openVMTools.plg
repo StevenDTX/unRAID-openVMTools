@@ -4,5 +4,5 @@
 <!ENTITY name      "unRAID-openVMTools">
 <!ENTITY author    "StevenDTX">
 <!ENTITY version   "2018.01.27.00">
-<!ENTITY pluginURL "http://daab.org/unraid/openVMTools.plg">
+<!ENTITY pluginURL "https://github.com/StevenDTX/unRAID-openVMTools/blob/master/openVMTools.plg">
 ]>
