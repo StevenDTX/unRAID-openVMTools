@@ -6,3 +6,55 @@
 <!ENTITY version   "2018.01.27.00">
 <!ENTITY pluginURL "https://github.com/StevenDTX/unRAID-openVMTools/blob/master/openVMTools.plg">
 ]>
+
+<PLUGIN  name="&name;"
+         author="&author;"
+         version="&version;"
+         pluginURL="&pluginURL;">
+
+<CHANGES>
+###2018.01.22
+- Add build for unRaid releases based on Kernel 4.14.13 (6.4.0)
+
+</CHANGES>
+		 
+		 
+<!--
+The open-vm-tools package for Kernel: 4.14.13
+-->
+		 
+<FILE Name="/boot/packages/open_vm_tools-10.1.0.4449150-K4.14.13_unRaid-x86_64-2018.01.27.00.tgz">
+<URL>https://github.com/StevenDTX/unRAID-openVMTools/blob/master/releases/open_vm_tools-10.1.0.4449150-K4.14.13_unRaid-x86_64-2018.01.27.00.tgz?raw=true</URL>
+<MD5>849b81fb267690fb1d7822263819f66e</MD5>
+</FILE>
+
+
+<!--
+Script to install the correct version based on the running kernel
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+KernelVersion=`uname -r | cut -d"-" -f1`
+
+if [ "$KernelVersion" == "4.14.13" ]; then
+
+	/sbin/installpkg /boot/packages/open_vm_tools-10.1.0.4449150-K4.14.13_unRaid-x86_64-2018.01.27.00.tgz
+
+else
+	
+	 echo "Open-VM-Tools is not available for Kernel ${KernelVersion} Please update the plugin. "
+	 echo "Check here: http://lime-technology.com/forum/index.php?topic=38279.0 for more information." 
+	
+fi
+</INLINE>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+</INLINE>
+</FILE>
+
+</PLUGIN>
