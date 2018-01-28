@@ -1,0 +1,20 @@
+--- systemLinux.c.orig	2013-01-12 18:15:50.000000000 +0000
++++ systemLinux.c	2013-01-12 18:18:45.000000000 +0000
+@@ -346,7 +346,7 @@
+ #if defined(sun)
+       cmd = "/usr/sbin/shutdown -g 0 -i 6 -y";
+ #else
+-      cmd = "/sbin/shutdown -r now";
++      cmd = "/usr/sbin/vm-tools-initiate-reboot";
+ #endif
+    } else {
+ #if __FreeBSD__
+@@ -354,7 +354,7 @@
+ #elif defined(sun)
+       cmd = "/usr/sbin/shutdown -g 0 -i 5 -y";
+ #else
+-      cmd = "/sbin/shutdown -h now";
++      cmd = "/usr/sbin/vm-tools-initiate-shutdown";
+ #endif
+    }
+    if (system(cmd) == -1) {
